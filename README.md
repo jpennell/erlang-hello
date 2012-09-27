@@ -10,8 +10,6 @@ See the following [blog post](http://egarson.blogspot.ca/2008/03/real-erlang-hel
 
 start() ->
     io:format("Hello, World!~n").
-
-
 ```
 
 ###Executing hello1.erl
@@ -33,8 +31,7 @@ Compile hello1.erl -> hello1.beam
 {ok,hello1}
 ```
 
-Invoke the start() function and assign the return value to a variable called Pid (variables in Erlang must start with an uppercase letter).
-Erlang will pretty print the process identifier.
+Invoke the start() function and it should print out "Hello World!"
 
 ``` shell
 2> hello1:start().
