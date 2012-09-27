@@ -1,10 +1,29 @@
-Erlang Hello World
-============
+#Erlang "Hello World!"
 
 See the following [blog post](http://egarson.blogspot.ca/2008/03/real-erlang-hello-world.html)
 
-Example of running hello.erl
+##Hello.erl
 
+``` erlang
+-module(hello).
+-export([start/0]).
+
+start() ->
+   spawn(fun() -> loop() end).
+
+loop() ->
+   receive
+      hello ->
+         io:format("Hello, World!~n"),
+         loop();
+
+      goodbye ->
+         ok
+   end.
+
+```
+
+##Executing hello.erl
 
 Open the erlang shell
 
