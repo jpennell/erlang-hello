@@ -2,7 +2,49 @@
 
 See the following [blog post](http://egarson.blogspot.ca/2008/03/real-erlang-hello-world.html)
 
-##Hello.erl
+##hello1.erl
+
+``` erlang
+-module(hello1).
+-export([start/0]).
+
+start() ->
+    io:format("Hello, World!~n").
+
+
+```
+
+###Executing hello1.erl
+
+Open the erlang shell
+
+``` shell
+$ erl
+Erlang R15B02 (erts-5.9.2) [source] [64-bit] [smp:8:8] [async-threads:0] [hipe] [kernel-poll:false] [dtrace]
+
+Eshell V5.9.2  (abort with ^G)
+1>
+```
+
+Compile hello1.erl -> hello1.beam
+
+``` shell
+1> c(hello1).
+{ok,hello1}
+```
+
+Invoke the start() function and assign the return value to a variable called Pid (variables in Erlang must start with an uppercase letter).
+Erlang will pretty print the process identifier.
+
+``` shell
+2> hello1:start().
+Hello, World!
+ok
+```
+
+Ctrl-C + a will quit
+
+##hello2.erl
 
 ``` erlang
 -module(hello).
@@ -23,7 +65,7 @@ loop() ->
 
 ```
 
-##Executing hello.erl
+###Executing hello2.erl
 
 Open the erlang shell
 
@@ -35,18 +77,18 @@ Eshell V5.9.2  (abort with ^G)
 1>
 ```
 
-Compile hello.erl -> hello.beam
+Compile hello2.erl -> hello2.beam
 
 ``` shell
-1> c(hello).
-{ok,hello}
+1> c(hello2).
+{ok,hello2}
 ```
 
 Invoke the start() function and assign the return value to a variable called Pid (variables in Erlang must start with an uppercase letter).
 Erlang will pretty print the process identifier.
 
 ``` shell
-2> Pid = hello:start().
+2> Pid = hello2:start().
 <0.38.0>
 ```
 
